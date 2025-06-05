@@ -1,0 +1,6 @@
+node_modules/
+frontend/node_modules/
+*.log
+mvn_test.log
+npm_install.log
+backend/target/

@@ -22,3 +22,16 @@
    ```
 
 자세한 내용은 각 폴더의 README를 참고하세요.
+
+## 주요 API 예시
+로그인 후 발급되는 JWT 토큰을 Authorization 헤더에 넣어 호출합니다.
+
+| 메서드 | URL | 설명 |
+| ------ | -------------------------- | ---------------- |
+| `POST` | `/api/auth/login` | 로그인, JWT 발급 |
+| `GET` | `/api/projects` | 프로젝트 목록 조회 |
+| `POST` | `/api/projects` | 새 프로젝트 등록 |
+| `POST` | `/api/projects/{id}/scan` | Fortify 분석 실행 |
+| `GET` | `/api/projects/{id}/results` | 프로젝트 분석 결과 |
+| `GET` | `/api/vulnerabilities/categories` | 취약점 카테고리 목록 |
+| `GET` | `/api/users/me` | 현재 로그인 사용자 조회 |
