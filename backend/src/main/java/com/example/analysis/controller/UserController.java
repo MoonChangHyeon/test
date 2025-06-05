@@ -20,7 +20,13 @@ public class UserController {
     @GetMapping("/me")
     public Map<String, Object> me(Authentication authentication) {
         return userRepository.findByUsername(authentication.getName())
-                .map(u -> Map.of("id", u.getId(), "username", u.getUsername(), "role", u.getRole()))
+                .map(u -> {
+                    Map<String, Object> userInfo = new java.util.HashMap<>();
+                    userInfo.put("id", u.getId());
+                    userInfo.put("username", u.getUsername());
+                    userInfo.put("role", u.getRole());
+                    return userInfo;
+                })
                 .orElseThrow();
     }
 }
